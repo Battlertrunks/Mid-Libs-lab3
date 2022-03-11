@@ -12,7 +12,7 @@ const CreateStoryRoute = () => {
   const [number, setNumber] = useState("");
   const [brandTagline, setBrandTagline] = useState("");
 
-  const { stories, addStory } = useContext(StoriesContext);
+  const { addStory } = useContext(StoriesContext);
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -29,7 +29,6 @@ const CreateStoryRoute = () => {
     console.log(newStory);
     addStory(newStory);
     console.log(addStory);
-    console.log(stories);
 
     setAuthor("");
     setPlace("");

@@ -31,11 +31,9 @@ function App() {
               <ListStoriesRoute sendId={(storyLoc) => setStoryLoc(storyLoc)} />
             }
           />
-          <Route
-            path={`/stories/:id`}
-            element={<ViewStoryRoute displayStory={stories[storyLoc]} />}
-          />
+          <Route path={`/stories/:id`} element={<ViewStoryRoute />} />
           <Route path={"/create-story"} element={<CreateStoryRoute />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
     </div>
