@@ -25,12 +25,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomeScreen />} />
-          <Route
-            path="/stories"
-            element={
-              <ListStoriesRoute sendId={(storyLoc) => setStoryLoc(storyLoc)} />
-            }
-          />
+          <Route path="/stories" element={<ListStoriesRoute />} />
           <Route path={`/stories/:id`} element={<ViewStoryRoute />} />
           <Route path={"/create-story"} element={<CreateStoryRoute />} />
           <Route path="*" element={<Navigate to="/" />} />

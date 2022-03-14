@@ -41,9 +41,10 @@ const StoriesContextProvider = ({ children }: Props) => {
     },
   ]);
   const addStory = (story: Story): void => {
-    console.log("Hello");
+    stories.length >= 1
+      ? (story.id = stories[stories.length - 1].id! + 1)
+      : (story.id = 1);
     setStories((prev) => [...prev, story]);
-    console.log(stories);
   };
 
   return (

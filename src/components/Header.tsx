@@ -7,18 +7,20 @@ const Header = () => {
       <Link to="/">
         <h1>GC Mad Libs</h1>
       </Link>
-      <ul>
-        <li>
-          <Link to="/stories">
-            <p>See Saved Stories</p>
-          </Link>
-        </li>
-        <li>
-          <Link to="/create-story">
-            <p>Create a New Story</p>
-          </Link>
-        </li>
-      </ul>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/stories">
+              <p>See Saved Stories</p>
+            </Link>
+          </li>
+          <li>
+            <Link to="/create-story">
+              <p>Create a New Story</p>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

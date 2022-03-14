@@ -1,4 +1,5 @@
 import { FormEvent, useContext, useState } from "react";
+import { useNavigate } from "react-router";
 import StoriesContext from "../context/StoriesContext";
 import Story from "../models/Story";
 import "./CreateStoryRoute.css";
@@ -13,6 +14,7 @@ const CreateStoryRoute = () => {
   const [brandTagline, setBrandTagline] = useState("");
 
   const { addStory } = useContext(StoriesContext);
+  const navigate = useNavigate();
 
   const submitHandler = (e: FormEvent): void => {
     e.preventDefault();
@@ -26,17 +28,9 @@ const CreateStoryRoute = () => {
       word6: brandTagline,
     };
 
-    console.log(newStory);
     addStory(newStory);
-    console.log(addStory);
 
-    setAuthor("");
-    setPlace("");
-    setPerson("");
-    setSillyWord("");
-    setOccupation("");
-    setNumber("");
-    setBrandTagline("");
+    navigate("/stories");
   };
 
   return (
